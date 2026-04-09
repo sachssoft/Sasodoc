@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<!-- Targets & Compiler-Einstellungen -->
+	<PropertyGroup>
+		<TargetFrameworks>net7.0;net8.0;net9.0;net10.0</TargetFrameworks>
+		<Nullable>enable</Nullable>
+		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+		<RootNamespace>Sachssoft.Sasodoc</RootNamespace>
+	</PropertyGroup>
+
+	<!-- Assembly / NuGet Metadata -->
+	<PropertyGroup>
+		<Title>Sachssoft Sasodoc</Title>
+		<Authors>Tobias Sachs</Authors>
+		<Company>Tobias Sachs / Sachssoft</Company>
+		<Product>Sachssoft Sasodoc</Product>
+		<AssemblyName>Sachssoft.Sasodoc</AssemblyName>
+		<Description>Document library</Description>
+		<Copyright>© 2026 Tobias Sachs / Sachssoft</Copyright>
+
+		<!-- Versionierung -->
+		<Version>1.0.0</Version>
+		<AssemblyVersion>1.0.0</AssemblyVersion>
+		<FileVersion>1.0.0</FileVersion>
+
+		<!-- NuGet -->
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/sachssoft/Sasodoc</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/sachssoft/Sasodoc.git</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+
+		<!-- Trimming / AOT -->
+		<IsTrimmable>True</IsTrimmable>
+		<IsAotCompatible>True</IsAotCompatible>
+	</PropertyGroup>
+
+</Project>
