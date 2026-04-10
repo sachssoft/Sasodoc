@@ -7,7 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sachssoft.Sasodoc", "Sachss
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sachssoft.Sasodoc.Json", "Sachssoft.Sasodoc.Json\Sachssoft.Sasodoc.Json.csproj", "{B87007D9-F66B-4D5C-9AF2-1335952EB98E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sachssoft.Sasodoc.Xml", "Sachssoft.Sasodoc.Xml\Sachssoft.Sasodoc.Xml.csproj", "{74EB84F2-C8A6-4366-9B41-F04C5C634638}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Markdowns", "Markdowns", "{7B03DCDB-F24D-476A-AEC3-A13CDCBC5ECF}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE.md = LICENSE.md
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +27,6 @@ Global
 		{B87007D9-F66B-4D5C-9AF2-1335952EB98E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B87007D9-F66B-4D5C-9AF2-1335952EB98E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B87007D9-F66B-4D5C-9AF2-1335952EB98E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{74EB84F2-C8A6-4366-9B41-F04C5C634638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{74EB84F2-C8A6-4366-9B41-F04C5C634638}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{74EB84F2-C8A6-4366-9B41-F04C5C634638}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{74EB84F2-C8A6-4366-9B41-F04C5C634638}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
