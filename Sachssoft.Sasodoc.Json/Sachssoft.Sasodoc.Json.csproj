@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net7.0;net8.0;net9.0;net10.0</TargetFrameworks>
+		<Nullable>enable</Nullable>
+		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+		<RootNamespace>Sachssoft.Sasodoc.Formats.Json</RootNamespace>
+		<AssemblyName>Sachssoft.Sasodoc.Json</AssemblyName>
+	</PropertyGroup>
+
+	<PropertyGroup>
+
+		<!-- NuGet Metadata -->
+		<PackageId>Sachssoft.Sasodoc.Json</PackageId>
+		<Version>1.0.0</Version>
+		<Title>Sachssoft Sasodoc For Json</Title>
+		<Authors>Tobias Sachs</Authors>
+		<Product>Sachssoft.Sasodoc For Json</Product>
+		<Description>JSON-specific functionality of Sachssoft Sasodoc library</Description>
+		<Copyright>© 2026 Tobias Sachs / Sachssoft</Copyright>
+
+		<!-- NuGet Package -->
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/sachssoft/Sasodoc</PackageProjectUrl>
+
+		<!-- GitHub Repository -->
+		<RepositoryUrl>https://github.com/sachssoft/Sasodoc.git</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+
+		<!-- Trimming / AOT -->
+		<IsTrimmable>True</IsTrimmable>
+		<IsAotCompatible>True</IsAotCompatible>
+	</PropertyGroup>
+
+	<!-- Referenz auf das Hauptprojekt -->
+	<ItemGroup>
+		<ProjectReference Include="..\Sachssoft.Sasodoc\Sachssoft.Sasodoc.csproj" />
+	</ItemGroup>
+
+	<!-- Optional: NuGet-Abhängigkeiten -->
+	<ItemGroup>
+		<PackageReference Include="System.Text.Json" Version="8.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Sachssoft.Sasodoc" Version="1.0.0" />
+	</ItemGroup>
+</Project>
