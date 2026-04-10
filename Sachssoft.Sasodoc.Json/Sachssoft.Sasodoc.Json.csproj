@@ -22,6 +22,8 @@
 		<!-- NuGet Package -->
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/sachssoft/Sasodoc</PackageProjectUrl>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<GeneratePackageOnBuild Condition="'$(Configuration)'=='Release'">True</GeneratePackageOnBuild>
 
 		<!-- GitHub Repository -->
 		<RepositoryUrl>https://github.com/sachssoft/Sasodoc.git</RepositoryUrl>

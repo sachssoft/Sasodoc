@@ -5,6 +5,7 @@
 		<Nullable>enable</Nullable>
 		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
 		<RootNamespace>Sachssoft.Sasodoc</RootNamespace>
+		<AssemblyName>Sachssoft.Sasodoc</AssemblyName>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -15,7 +16,6 @@
 		<Title>Sachssoft Sasodoc</Title>
 		<Authors>Tobias Sachs</Authors>
 		<Product>Sachssoft.Sasodoc</Product>
-		<AssemblyName>Sachssoft.Sasodoc</AssemblyName>
 		<Description>Document library core of Sachssoft Sasodoc</Description>
 		<Copyright>© 2026 Tobias Sachs / Sachssoft</Copyright>
 
