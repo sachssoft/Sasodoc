@@ -1,20 +1,21 @@
-﻿namespace Sachssoft.Sasofly.Documents.Naming;
-
-/// <summary>
-/// Defines a naming convention for converting strings to a specific case or format.
-/// </summary>
-public interface INamingConvention
+﻿namespace Sachssoft.Sasodoc.Naming.Case
 {
     /// <summary>
-    /// Converts the specified string to the target naming convention.
+    /// Defines a naming convention for converting strings to a specific case or format.
     /// </summary>
-    /// <param name="value">The input string to convert.</param>
-    /// <param name="options">The naming options to apply during conversion.</param>
-    /// <returns>The converted string according to the naming convention.</returns>
-    string Convert(string value, NamingOptions? options);
+    public interface INamingConvention
+    {
+        /// <summary>
+        /// Converts the specified string to the target naming convention.
+        /// </summary>
+        /// <param name="value">The input string to convert.</param>
+        /// <param name="options">The naming options to apply during conversion.</param>
+        /// <returns>The converted string according to the naming convention.</returns>
+        string Convert(string value, NamingOptions? options);
 
-    /// <summary>
-    /// Special characters that are part of the string case and may affect word separation.
-    /// </summary>
-    string? SpecialCharacters { get; }
+        /// <summary>
+        /// Special characters that are part of the string case and may affect word separation.
+        /// </summary>
+        string? SpecialCharacters { get; }
+    }
 }

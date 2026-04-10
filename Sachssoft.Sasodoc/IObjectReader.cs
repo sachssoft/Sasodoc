@@ -1,6 +1,7 @@
-﻿namespace Sachssoft.Sasodoc;
-
-public interface IObjectReader<TReader> where TReader : FormatReaderBase
+﻿namespace Sachssoft.Sasodoc
 {
-    void Read(TReader reader);
+    public interface IObjectReader<TReader> where TReader : FormatReaderBase
+    {
+        void Read(TReader reader);
+    }
 }

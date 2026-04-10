@@ -1,12 +1,13 @@
-﻿namespace Sachssoft.Sasofly.Documents.Naming.Cases;
-
-public sealed class FlatCase : NamingConventionBase
+﻿namespace Sachssoft.Sasodoc.Naming.Case
 {
-    public override string? SpecialCharacters => null;
-
-    public override string Convert(string value, NamingOptions options)
+    public sealed class FlatCase : NamingConventionBase
     {
-        var words = GetWords(value, options, CharacterCasing.Lower);
-        return string.Join("", words);
+        public override string? SpecialCharacters => null;
+
+        public override string Convert(string value, NamingOptions options)
+        {
+            var words = GetWords(value, options, CharacterCasing.Lower);
+            return string.Join("", words);
+        }
     }
 }

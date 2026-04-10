@@ -2,80 +2,81 @@
 using System.IO;
 using System.Threading.Tasks;
 
-namespace Sachssoft.Sasodoc;
-
-public static class SerializerExtensions
+namespace Sachssoft.Sasodoc
 {
+    public static class SerializerExtensions
+    {
 
-    #region Formatter
+        #region Formatter
 
-    public static void Save<TWriter>(this IObjectFormatWriter<TWriter> obj, Stream stream)
+        public static void Save<TWriter>(this IObjectFormatWriter<TWriter> obj, Stream stream)
+            where TWriter : FormatWriterBase
+        {
+            obj.SaveTo(stream);
+        }
+
+        public static void Save<TWriter>(this IObjectFormatWriter<TWriter> obj, string file_path)
+            where TWriter : FormatWriterBase
+        {
+            using var fs = File.Create(file_path);
+            obj.SaveTo(fs);
+        }
+
+        public static async Task SaveAsync<TWriter>(this IObjectFormatWriter<TWriter> obj, string file_path)
         where TWriter : FormatWriterBase
-    {
-        obj.SaveTo(stream);
-    }
+        {
+            await using var stream = File.Create(file_path);
+            obj.SaveTo(stream); // nur async um den Dateizugriff zu kapseln
+        }
 
-    public static void Save<TWriter>(this IObjectFormatWriter<TWriter> obj, string file_path)
+        public static byte[] SaveToBytes<TWriter>(this IObjectFormatWriter<TWriter> obj)
         where TWriter : FormatWriterBase
-    {
-        using var fs = File.Create(file_path);
-        obj.SaveTo(fs);
-    }
+        {
+            using var stream = new MemoryStream();
+            obj.SaveTo(stream);
+            return stream.ToArray();
+        }
 
-    public static async Task SaveAsync<TWriter>(this IObjectFormatWriter<TWriter> obj, string file_path)
-    where TWriter : FormatWriterBase
-    {
-        await using var stream = File.Create(file_path);
-        obj.SaveTo(stream); // nur async um den Dateizugriff zu kapseln
-    }
+        public static string SaveToBase64<TWriter>(this IObjectFormatWriter<TWriter> obj)
+        where TWriter : FormatWriterBase
+        {
+            return Convert.ToBase64String(obj.SaveToBytes());
+        }
 
-    public static byte[] SaveToBytes<TWriter>(this IObjectFormatWriter<TWriter> obj)
-    where TWriter : FormatWriterBase
-    {
-        using var stream = new MemoryStream();
-        obj.SaveTo(stream);
-        return stream.ToArray();
-    }
+        public static void Load<TReader>(this IObjectFormatReader<TReader> obj, System.IO.Stream stream)
+            where TReader : FormatReaderBase
+        {
+            obj.LoadFrom(stream);
+        }
 
-    public static string SaveToBase64<TWriter>(this IObjectFormatWriter<TWriter> obj)
-    where TWriter : FormatWriterBase
-    {
-        return Convert.ToBase64String(obj.SaveToBytes());
-    }
+        public static void Load<TReader>(this IObjectFormatReader<TReader> obj, string file_path)
+            where TReader : FormatReaderBase
+        {
+            using var fs = File.OpenRead(file_path);
+            obj.LoadFrom(fs);
+        }
 
-    public static void Load<TReader>(this IObjectFormatReader<TReader> obj, System.IO.Stream stream)
-        where TReader : FormatReaderBase
-    {
-        obj.LoadFrom(stream);
-    }
+        public static async Task LoadAsync<TReader>(this IObjectFormatReader<TReader> obj, string file_path)
+            where TReader : FormatReaderBase
+        {
+            await using var stream = File.OpenRead(file_path);
+            obj.LoadFrom(stream); // nur async um den Dateizugriff zu kapseln
+        }
 
-    public static void Load<TReader>(this IObjectFormatReader<TReader> obj, string file_path)
-        where TReader : FormatReaderBase
-    {
-        using var fs = File.OpenRead(file_path);
-        obj.LoadFrom(fs);
-    }
+        public static void LoadFromBytes<TReader>(this IObjectFormatReader<TReader> obj, byte[] data)
+            where TReader : FormatReaderBase
+        {
+            using var stream = new MemoryStream(data);
+            obj.LoadFrom(stream);
+        }
 
-    public static async Task LoadAsync<TReader>(this IObjectFormatReader<TReader> obj, string file_path)
-        where TReader : FormatReaderBase
-    {
-        await using var stream = File.OpenRead(file_path);
-        obj.LoadFrom(stream); // nur async um den Dateizugriff zu kapseln
-    }
+        public static void LoadFromBase64<TReader>(this IObjectFormatReader<TReader> obj, string base64)
+            where TReader : FormatReaderBase
+        {
+            var bytes = Convert.FromBase64String(base64);
+            obj.LoadFromBytes(bytes);
+        }
 
-    public static void LoadFromBytes<TReader>(this IObjectFormatReader<TReader> obj, byte[] data)
-        where TReader : FormatReaderBase
-    {
-        using var stream = new MemoryStream(data);
-        obj.LoadFrom(stream);
+        #endregion
     }
-
-    public static void LoadFromBase64<TReader>(this IObjectFormatReader<TReader> obj, string base64)
-        where TReader : FormatReaderBase
-    {
-        var bytes = Convert.FromBase64String(base64);
-        obj.LoadFromBytes(bytes);
-    }
-
-    #endregion
 }

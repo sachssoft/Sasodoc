@@ -1,4 +1,6 @@
-﻿using Sachssoft.Sasofly.Documents.Naming;
+﻿using Sachssoft.Sasodoc;
+using Sachssoft.Sasodoc.Naming;
+using Sachssoft.Sasodoc.Naming.Case;
 
 namespace Sachssoft.Sasodoc
 {

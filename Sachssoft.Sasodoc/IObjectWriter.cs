@@ -1,6 +1,7 @@
-﻿namespace Sachssoft.Sasodoc;
-
-public interface IObjectWriter<TWriter> where TWriter : FormatWriterBase
+﻿namespace Sachssoft.Sasodoc
 {
-    void Write(TWriter writer);
+    public interface IObjectWriter<TWriter> where TWriter : FormatWriterBase
+    {
+        void Write(TWriter writer);
+    }
 }

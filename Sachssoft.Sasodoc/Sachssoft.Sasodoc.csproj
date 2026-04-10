@@ -1,31 +1,31 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-	<!-- Targets & Compiler-Einstellungen -->
 	<PropertyGroup>
-		<TargetFrameworks>net7.0;net8.0;net9.0;net10.0</TargetFrameworks>
+		<TargetFrameworks>net5.0;net6.0;net7.0;net8.0;net9.0;net10.0</TargetFrameworks>
 		<Nullable>enable</Nullable>
 		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
 		<RootNamespace>Sachssoft.Sasodoc</RootNamespace>
 	</PropertyGroup>
 
-	<!-- Assembly / NuGet Metadata -->
 	<PropertyGroup>
+		
+		<!-- NuGet Metadata -->
+		<PackageId>Sachssoft.Sasodoc</PackageId>
+		<Version>1.0.0</Version>
 		<Title>Sachssoft Sasodoc</Title>
 		<Authors>Tobias Sachs</Authors>
-		<Company>Tobias Sachs / Sachssoft</Company>
-		<Product>Sachssoft Sasodoc</Product>
+		<Product>Sachssoft.Sasodoc</Product>
 		<AssemblyName>Sachssoft.Sasodoc</AssemblyName>
-		<Description>Document library</Description>
+		<Description>Document library core of Sachssoft Sasodoc</Description>
 		<Copyright>© 2026 Tobias Sachs / Sachssoft</Copyright>
 
-		<!-- Versionierung -->
-		<Version>1.0.0</Version>
-		<AssemblyVersion>1.0.0</AssemblyVersion>
-		<FileVersion>1.0.0</FileVersion>
-
-		<!-- NuGet -->
+		<!-- NuGet Package -->
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/sachssoft/Sasodoc</PackageProjectUrl>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<GeneratePackageOnBuild Condition="'$(Configuration)'=='Release'">True</GeneratePackageOnBuild>
+		
+		<!-- GitHub Repository -->
 		<RepositoryUrl>https://github.com/sachssoft/Sasodoc.git</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 

@@ -1,20 +1,21 @@
 ﻿using System.Globalization;
 
-namespace Sachssoft.Sasofly.Documents.Naming;
-
-public class NamingOptions
+namespace Sachssoft.Sasodoc.Naming.Case
 {
-    public CultureInfo? Culture { get; set; } = CultureInfo.InvariantCulture;
+    public class NamingOptions
+    {
+        public CultureInfo? Culture { get; init; } = CultureInfo.InvariantCulture;
 
-    public bool AsciiOnly { get; set; } = false;
+        public bool AsciiOnly { get; init; } = false;
 
-    public bool KeepSymbols { get; set; } = false;
+        public bool KeepSymbols { get; init; } = false;
 
-    public bool KeepPunctuations { get; set; } = false;
+        public bool KeepPunctuations { get; init; } = false;
 
-    public bool IgnoreIfInvalidCharacters { get; set; } = true;
+        public bool IgnoreIfInvalidCharacters { get; init; } = true;
 
-    public bool SeparateIfUpperCase { get; set; } = true;
+        public bool SeparateIfUpperCase { get; init; } = true;
 
-    public bool KeepUpperCaseWord { get; set; } = true;
+        public bool KeepUpperCaseWord { get; init; } = true;
+    }
 }

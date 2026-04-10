@@ -1,9 +1,10 @@
-﻿namespace Sachssoft.Sasodoc;
-
-public enum ConversionErrorHandling
+﻿namespace Sachssoft.Sasodoc
 {
-    Default,
-    Ignore,
-    Cancel,
-    Replace
+    public enum ConversionErrorHandling
+    {
+        Default,
+        Ignore,
+        Cancel,
+        Replace
+    }
 }
