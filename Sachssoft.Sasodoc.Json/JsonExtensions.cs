@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
-using System.Linq;
 using System.Numerics;
-using System.Text;
 using System.Text.Json.Nodes;
-using System.Threading.Tasks;
 
 namespace Sachssoft.Sasodoc.Formats.Json
 {
@@ -165,8 +160,8 @@ namespace Sachssoft.Sasodoc.Formats.Json
 
             // Fallback
             return fallback;
-        }    
-        
+        }
+
         public static Guid ReadGuid(this JsonObject jsonItem, string key, Guid fallback = default)
         {
             if (!jsonItem.TryGetPropertyValue(key, out var node) || node is not JsonValue value)

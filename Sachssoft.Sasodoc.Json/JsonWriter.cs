@@ -323,12 +323,12 @@ public class JsonWriter : FormatWriter<JsonWriter, string>
         }
     }
 
-    public override void WriteObject(string? property, IObjectWriter<JsonWriter>? value, Action<JsonWriter>? writer_before = null)
+    public override void WriteObject(string? property, IObjectWriter<JsonWriter>? value, Action<JsonWriter>? writerBefore = null)
     {
         if (property != null && value != null)
         {
             var writer = new JsonWriter();
-            writer_before?.Invoke(writer);
+            writerBefore?.Invoke(writer);
             value.Write(writer);
 
             var propertyName = ConvertPropertyName(property);
