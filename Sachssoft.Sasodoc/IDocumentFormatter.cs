@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Sachssoft.Sasodoc
+﻿namespace Sachssoft.Sasodoc
 {
     public interface IDocumentFormatter : IFormatReader, IFormatWriter
     {

@@ -1,6 +1,4 @@
-﻿using Sachssoft.Sasodoc;
-using Sachssoft.Sasodoc.Naming;
-using Sachssoft.Sasodoc.Naming.Case;
+﻿using Sachssoft.Sasodoc.Naming;
 
 namespace Sachssoft.Sasodoc
 {

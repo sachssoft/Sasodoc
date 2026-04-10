@@ -1,6 +1,6 @@
-﻿using System.Linq;
-using Sachssoft.Sasodoc.Naming;
-using Sachssoft.Sasodoc.Naming.Case;
+﻿using Sachssoft.Sasodoc.Naming.Cases;
+using System;
+using System.Linq;
 
 namespace Sachssoft.Sasodoc
 {
@@ -10,9 +10,11 @@ namespace Sachssoft.Sasodoc
 
         public FormatOptions? Options { get; set; }
 
-        // Property, usw...
         protected string ConvertPropertyName(string propertyName)
         {
+            if (string.IsNullOrWhiteSpace(propertyName))
+                throw new ArgumentException("Property name must not be null or empty.", nameof(propertyName));
+
             var options = Options ?? new();
 
             if (options.PreservedPropertyNames != null && options.PreservedPropertyNames.Contains(propertyName))
@@ -21,12 +23,21 @@ namespace Sachssoft.Sasodoc
             }
 
             var nc = options.PropertyNamingConvention ?? new SnakeCase();
-            return nc.Convert(propertyName, options.PropertyNamingOptions ?? new());
+            var converted = nc.Convert(propertyName, options.PropertyNamingOptions ?? new());
+
+            if (string.IsNullOrWhiteSpace(converted))
+                throw new InvalidOperationException(
+                    $"Conversion of property name '{propertyName}' resulted in an invalid value."
+                );
+
+            return converted;
         }
 
-        // Enum, usw...
         protected string ConvertFieldName(string fieldName)
         {
+            if (string.IsNullOrWhiteSpace(fieldName))
+                throw new ArgumentException("Field name must not be null or empty.", nameof(fieldName));
+
             var options = Options ?? new();
 
             if (options.PreservedFieldNames != null && options.PreservedFieldNames.Contains(fieldName))
@@ -35,7 +46,14 @@ namespace Sachssoft.Sasodoc
             }
 
             var nc = options.FieldNamingConvention ?? new SnakeCase();
-            return nc.Convert(fieldName, options.FieldNamingOptions ?? new());
+            var converted = nc.Convert(fieldName, options.FieldNamingOptions ?? new());
+
+            if (string.IsNullOrWhiteSpace(converted))
+                throw new InvalidOperationException(
+                    $"Conversion of field name '{fieldName}' resulted in an invalid value."
+                );
+
+            return converted;
         }
     }
 }

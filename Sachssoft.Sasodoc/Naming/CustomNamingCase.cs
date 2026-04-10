@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sachssoft.Sasodoc.Naming.Case
+namespace Sachssoft.Sasodoc.Naming
 {
     /// <summary>
     /// Custom naming convention that allows specifying special characters, separators, and casing per word.
@@ -10,14 +10,14 @@ namespace Sachssoft.Sasodoc.Naming.Case
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomNamingCase"/> class.
         /// </summary>
-        /// <param name="special_characters">Optional special characters that should be ignored in word separation.</param>
+        /// <param name="specialCharacters">Optional special characters that should be ignored in word separation.</param>
         /// <param name="separator">Optional separator string used between words.</param>
-        /// <param name="casing_action">Function defining the character casing for each word.</param>
-        public CustomNamingCase(string? special_characters, string? separator, Func<int, CharacterCasing> casing_action)
+        /// <param name="casingAction">Function defining the character casing for each word.</param>
+        public CustomNamingCase(string? specialCharacters, string? separator, Func<int, CharacterCasing> casingAction)
         {
-            SpecialCharacters = special_characters;
+            SpecialCharacters = specialCharacters;
             Separator = separator;
-            CasingAction = casing_action;
+            CasingAction = casingAction;
         }
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace Sachssoft.Sasodoc.Naming.Case
         /// <param name="value">The input string to convert.</param>
         /// <param name="options">The naming options to use.</param>
         /// <returns>The converted string in the custom naming case.</returns>
-        public override string Convert(string value, NamingOptions? options)
+        public override string? Convert(string? value, NamingOptions? options)
         {
             var words = GetWords(value, options, CasingAction);
             return string.Join(Separator, words);

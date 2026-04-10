@@ -36,7 +36,7 @@ namespace Sachssoft.Sasodoc
         public void WriteDateTime(DateTime value) => WriteDateTime(null, value);
         public void WriteGuid(Guid value) => WriteGuid(null, value);
         public void WriteEnum<TEnum>(TEnum value) where TEnum : struct, Enum => WriteEnum(null, value);
-        public void WriteObject(object? value, Action<FormatWriterBase>? writer_before = null) => WriteObject(null, value, writer_before);
+        public void WriteObject(object? value, Action<FormatWriterBase>? writerBefore = null) => WriteObject(null, value, writerBefore);
         public void Write(string v, FormatWriterBase? value) => Write(context: v, value);
 
         public abstract void WriteBoolean(object? context, bool value);
@@ -57,7 +57,7 @@ namespace Sachssoft.Sasodoc
         public abstract void WriteDateTime(object? context, DateTime value);
         public abstract void WriteGuid(object? context, Guid value);
         public abstract void WriteEnum<TEnum>(object? context, TEnum value) where TEnum : struct, Enum;
-        public abstract void WriteObject(object? context, object? value, Action<FormatWriterBase>? writer_before = null);
+        public abstract void WriteObject(object? context, object? value, Action<FormatWriterBase>? writerBefore = null);
         public abstract void Write(object? context, FormatWriterBase? value);
 
         public void WriteBooleanArray(bool[]? values) => WriteBooleanArray(null, values);
@@ -78,7 +78,7 @@ namespace Sachssoft.Sasodoc
         public void WriteDateTimeArray(DateTime[]? values) => WriteDateTimeArray(null, values);
         public void WriteGuidArray(Guid[]? values) => WriteGuidArray(null, values);
         public void WriteEnumArray<TEnum>(TEnum[]? values) where TEnum : struct, Enum => WriteEnumArray(null, values);
-        public void WriteObjectArray(object[]? values, Action<FormatWriterBase>? writer_before = null) => WriteObjectArray(null, values, writer_before);
+        public void WriteObjectArray(object[]? values, Action<FormatWriterBase>? writerBefore = null) => WriteObjectArray(null, values, writerBefore);
         public void WriteArray(FormatWriterBase[]? values) => WriteArray(null, values);
 
         public abstract void WriteBooleanArray(object? context, bool[]? values);
@@ -99,7 +99,7 @@ namespace Sachssoft.Sasodoc
         public abstract void WriteDateTimeArray(object? context, DateTime[]? values);
         public abstract void WriteGuidArray(object? context, Guid[]? values);
         public abstract void WriteEnumArray<TEnum>(object? context, TEnum[]? values) where TEnum : struct, Enum;
-        public abstract void WriteObjectArray(object? context, object[]? values, Action<FormatWriterBase>? writer_before = null);
+        public abstract void WriteObjectArray(object? context, object[]? values, Action<FormatWriterBase>? writerBefore = null);
         public abstract void WriteArray(object? context, FormatWriterBase[]? values);
     }
 }

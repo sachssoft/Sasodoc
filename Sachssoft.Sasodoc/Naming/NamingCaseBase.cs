@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace Sachssoft.Sasodoc.Naming.Case
+namespace Sachssoft.Sasodoc.Naming
 {
 
     /// <summary>
@@ -17,7 +17,7 @@ namespace Sachssoft.Sasodoc.Naming.Case
         /// <summary>
         /// Converts the name according to the string case transformation.
         /// </summary>
-        public abstract string Convert(string value, NamingOptions? options);
+        public abstract string? Convert(string? value, NamingOptions? options);
 
         /// <summary>
         /// Special characters that are part of the string case.
@@ -39,9 +39,9 @@ namespace Sachssoft.Sasodoc.Naming.Case
         /// <remarks>
         /// Finde die Wörter aus diesem Wert heraus und wende eine Groß-/Kleinschreibung pro Wort an.
         /// </remarks>
-        internal protected string[] GetWords(string? value, NamingOptions? options, Func<int, CharacterCasing> casing_action)
+        internal protected string[] GetWords(string? value, NamingOptions? options, Func<int, CharacterCasing> casingAction)
         {
-            if (string.IsNullOrWhiteSpace(value)) return new string[0];
+            if (string.IsNullOrWhiteSpace(value)) return Array.Empty<string>();
 
             var words = new List<string>();
             var current_word = string.Empty;
@@ -82,13 +82,13 @@ namespace Sachssoft.Sasodoc.Naming.Case
                     // Wenn es eine Zeichensetzung oder ein Leerzeichen ist
                     if (condition && current_word.Length > 0)
                     {
-                        words.Add(TransformCase(current_word, options, casing_action(words.Count)));
+                        words.Add(TransformCase(current_word, options, casingAction(words.Count)));
                         current_word = string.Empty;
                     }
                 }
                 else if (i == value.Length - 1)
                 {
-                    words.Add(TransformCase(current_word, options, casing_action(words.Count)));
+                    words.Add(TransformCase(current_word, options, casingAction(words.Count)));
                 }
             }
 
@@ -98,7 +98,7 @@ namespace Sachssoft.Sasodoc.Naming.Case
         /// <summary>
         /// Transforms a word according to the specified character casing.
         /// </summary>
-        private string TransformCase(string word, NamingOptions options, CharacterCasing casing)
+        private static string TransformCase(string word, NamingOptions options, CharacterCasing casing)
         {
             var culture = options.Culture ?? CultureInfo.InvariantCulture;
 
@@ -121,7 +121,7 @@ namespace Sachssoft.Sasodoc.Naming.Case
         /// <remarks>
         /// Überprüft, ob ein Zeichen beim Aufteilen des Strings in Wörter beibehalten werden soll.
         /// </remarks>
-        private bool KeepCharacter(char character, string? special_chars, NamingOptions options, bool ignore_condition)
+        private static bool KeepCharacter(char character, string? special_chars, NamingOptions options, bool ignore_condition)
         {
             // Ist es eine Zeichensetzung oder ein Leerzeichen?
             if (char.IsWhiteSpace(character)) return false;
@@ -139,7 +139,7 @@ namespace Sachssoft.Sasodoc.Naming.Case
 #if NET6_0_OR_GREATER
             if (options.AsciiOnly && !char.IsAscii(character)) return result;
 #else
-if (options.AsciiOnly && character > 127) return result;
+            if (options.AsciiOnly && character > 127) return result;
 #endif
 
             // Option: Werden die Zeichensetzungen behalten?

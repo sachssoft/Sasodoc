@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace Sachssoft.Sasodoc.Naming.Case
+namespace Sachssoft.Sasodoc.Naming
 {
     public class NamingOptions
     {

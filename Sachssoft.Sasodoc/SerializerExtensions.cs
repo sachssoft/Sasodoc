@@ -15,17 +15,17 @@ namespace Sachssoft.Sasodoc
             obj.SaveTo(stream);
         }
 
-        public static void Save<TWriter>(this IObjectFormatWriter<TWriter> obj, string file_path)
+        public static void Save<TWriter>(this IObjectFormatWriter<TWriter> obj, string filePath)
             where TWriter : FormatWriterBase
         {
-            using var fs = File.Create(file_path);
+            using var fs = File.Create(filePath);
             obj.SaveTo(fs);
         }
 
-        public static async Task SaveAsync<TWriter>(this IObjectFormatWriter<TWriter> obj, string file_path)
+        public static async Task SaveAsync<TWriter>(this IObjectFormatWriter<TWriter> obj, string filePath)
         where TWriter : FormatWriterBase
         {
-            await using var stream = File.Create(file_path);
+            await using var stream = File.Create(filePath);
             obj.SaveTo(stream); // nur async um den Dateizugriff zu kapseln
         }
 
@@ -49,17 +49,17 @@ namespace Sachssoft.Sasodoc
             obj.LoadFrom(stream);
         }
 
-        public static void Load<TReader>(this IObjectFormatReader<TReader> obj, string file_path)
+        public static void Load<TReader>(this IObjectFormatReader<TReader> obj, string filePath)
             where TReader : FormatReaderBase
         {
-            using var fs = File.OpenRead(file_path);
+            using var fs = File.OpenRead(filePath);
             obj.LoadFrom(fs);
         }
 
-        public static async Task LoadAsync<TReader>(this IObjectFormatReader<TReader> obj, string file_path)
+        public static async Task LoadAsync<TReader>(this IObjectFormatReader<TReader> obj, string filePath)
             where TReader : FormatReaderBase
         {
-            await using var stream = File.OpenRead(file_path);
+            await using var stream = File.OpenRead(filePath);
             obj.LoadFrom(stream); // nur async um den Dateizugriff zu kapseln
         }
 

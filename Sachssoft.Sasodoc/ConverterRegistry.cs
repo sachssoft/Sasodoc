@@ -105,6 +105,8 @@ namespace Sachssoft.Sasodoc
             {
                 try
                 {
+                    if (value == null)
+                        return null;
                     return typeConv.ConvertFrom(value);
                 }
                 catch (Exception ex)

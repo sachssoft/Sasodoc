@@ -100,7 +100,7 @@ namespace Sachssoft.Sasodoc
 
         #endregion
 
-        private IObjectReader<TReader>[]? ConvertFallback(object[]? fallback)
+        private static IObjectReader<TReader>[]? ConvertFallback(object[]? fallback)
         {
             if (fallback == null) return null;
             var result = new IObjectReader<TReader>[fallback.Length];

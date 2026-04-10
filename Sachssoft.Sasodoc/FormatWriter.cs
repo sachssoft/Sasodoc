@@ -75,7 +75,7 @@ namespace Sachssoft.Sasodoc
         public override sealed void WriteDateTime(object? context, DateTime value) => WriteDateTime((TProperty?)context, value);
         public override sealed void WriteGuid(object? context, Guid value) => WriteGuid((TProperty?)context, value);
         public override sealed void WriteEnum<TEnum>(object? context, TEnum value) => WriteEnum((TProperty?)context, value);
-        public override sealed void WriteObject(object? context, object? value, Action<FormatWriterBase>? writer_before = null) => WriteObject(property: (TProperty?)context, (IObjectFormatWriter<TWriter>?)value, writer_before);
+        public override sealed void WriteObject(object? context, object? value, Action<FormatWriterBase>? writerBefore = null) => WriteObject(property: (TProperty?)context, (IObjectFormatWriter<TWriter>?)value, writerBefore);
         public override sealed void Write(object? context, FormatWriterBase? value) => Write((TProperty?)context, (FormatWriter<TWriter, TProperty>?)value);
 
         public override sealed void WriteBooleanArray(object? context, bool[]? values) => WriteBooleanArray((TProperty?)context, values);
@@ -96,7 +96,7 @@ namespace Sachssoft.Sasodoc
         public override sealed void WriteDateTimeArray(object? context, DateTime[]? values) => WriteDateTimeArray((TProperty?)context, values);
         public override sealed void WriteGuidArray(object? context, Guid[]? values) => WriteGuidArray((TProperty?)context, values);
         public override sealed void WriteEnumArray<TEnum>(object? context, TEnum[]? values) => WriteEnumArray((TProperty?)context, values);
-        public override sealed void WriteObjectArray(object? context, object[]? values, Action<FormatWriterBase>? writer_before = null) => WriteObjectArray((TProperty?)context, values, writer_before);
+        public override sealed void WriteObjectArray(object? context, object[]? values, Action<FormatWriterBase>? writerBefore = null) => WriteObjectArray((TProperty?)context, values, writerBefore);
         public override sealed void WriteArray(object? context, FormatWriterBase[]? values) => WriteArray((TProperty?)context, values?.Select(x => (FormatWriter<TWriter, TProperty>)x).ToArray());
 
         #endregion
