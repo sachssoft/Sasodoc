@@ -38,12 +38,12 @@ Sasodoc soll Entwicklern helfen:
 
 ## 📦 Unterstütze Formate
 
-| Format | Status         | NuGet |
-| ------ | -------------- | ----- |
-| JSON   | ✅ Available    |       |
-| XML    | 🚧 Coming Soon |       |
-| YAML   | 🚧 Coming Soon |       |
-| TOML   | 🚧 Coming Soon |       |
+| Format | Status         | Minimum .NET Version | NuGet |
+| ------ | -------------- | -------------------- | ----- |
+| JSON   | ✅ Verfügbar    | 7.0				 |       |
+| XML    | 🚧 In Planung |						 |       |
+| YAML   | 🚧 In Planung |						 |       |
+| TOML   | 🚧 In Planung |						 |       |
 
 ---
 
