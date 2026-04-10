@@ -41,7 +41,6 @@ Sasodoc is designed to help developers:
 | Format | Status         | Minimum .NET Version | NuGet |
 | ------ | -------------- | -------------------- | ----- |
 | Basic   | ✅ Available    | 5.0				 | [![NuGet](https://img.shields.io/nuget/v/Sachssoft.Sasodoc)](https://www.nuget.org/packages/Sachssoft.Sasodoc)      |
-| ------ | -------------- | -------------------- | ----- |
 | JSON   | ✅ Available    | 7.0				 | [![NuGet](https://img.shields.io/nuget/v/Sachssoft.Sasodoc)](https://www.nuget.org/packages/Sachssoft.Sasodoc)      |
 | XML    | 🚧 Coming Soon |						 | |
 | YAML   | 🚧 Coming Soon |						 |       |
