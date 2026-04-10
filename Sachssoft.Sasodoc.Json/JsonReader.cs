@@ -45,16 +45,16 @@ public class JsonReader : FormatReader<JsonReader, string>
         Func<JsonNode, T?> convert
     )
     {
-        bool OutputValue(ref T? value, ConversionErrorHandling error_handling)
+        bool OutputValue(ref T? value, ConversionErrorHandling errorHandling)
         {
-            value = error_handling switch
+            value = errorHandling switch
             {
                 ConversionErrorHandling.Default => default,   // Standardwert (z.B. null oder 0)
                 ConversionErrorHandling.Replace => fallback,  // Fallback-Wert
                 _ => value                                     // Bei Cancel oder Ignore bleibt Wert unverändert
             };
             // Gibt true zurück, wenn Wert gesetzt wurde (Default oder Replace), sonst false
-            return error_handling == ConversionErrorHandling.Default || error_handling == ConversionErrorHandling.Replace;
+            return errorHandling == ConversionErrorHandling.Default || errorHandling == ConversionErrorHandling.Replace;
         }
 
         if (property == null || !_node.TryGetPropertyValue(ConvertPropertyName(property), out var json_node))
@@ -90,7 +90,7 @@ public class JsonReader : FormatReader<JsonReader, string>
         T[] fallback,
         Func<object?, T?> convert,
         ConversionErrorHandling errorHandling = ConversionErrorHandling.Cancel,
-        T? replacement_value = default
+        T? replacementValue = default
     )
     {
         if (property == null || !_node.TryGetPropertyValue(ConvertPropertyName(property), out var val))
@@ -118,8 +118,8 @@ public class JsonReader : FormatReader<JsonReader, string>
                         case ConversionErrorHandling.Replace:
                         case ConversionErrorHandling.Default:
                             // Ersatzwert benutzen, wenn gesetzt
-                            if (replacement_value != null)
-                                list.Add(replacement_value);
+                            if (replacementValue != null)
+                                list.Add(replacementValue);
                             else
                                 list.Add(default!);
                             break;
@@ -646,9 +646,9 @@ public class JsonReader : FormatReader<JsonReader, string>
 
         var result = new List<FormatReader<JsonReader, string>>();
 
-        if (_node.TryGetPropertyValue(ConvertPropertyName(property), out var json_node) && json_node is JsonArray json_array)
+        if (_node.TryGetPropertyValue(ConvertPropertyName(property), out var json_node) && json_node is JsonArray jsonArray)
         {
-            foreach (var item in json_array)
+            foreach (var item in jsonArray)
             {
                 if (item is JsonObject json_object)
                 {
