@@ -10,6 +10,8 @@ It provides a common API for reading and writing different document formats whil
 
 ## Documentation
 
+* **English Documentation**: See [README.md](README.md)
+* **German Documentation**: See [README_DE.md](README_DE.md)
 * **Package Build & Publish Guide**: See [PackageBuildInstructions.md](PackageBuildInstructions.md)
 * **License**: See [LICENSE.md](LICENSE.md)
 * **Changelog**: See [CHANGELOG.md](CHANGELOG.md)

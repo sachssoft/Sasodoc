@@ -10,6 +10,8 @@ Sie stellt eine gemeinsame API zum Lesen und Schreiben verschiedener Dokumentfor
 
 ## Dokumentation
 
+* **Englische Dokumentation**: Siehe [README.md](README.md)
+* **Deutsche Dokumentation**: Siehe [README_DE.md](README_DE.md)
 * **Anleitung zum Erstellen und Veröffentlichen von Paketen**: Siehe [PackageBuildInstructions.md](PackageBuildInstructions.md)
 * **Lizenz**: Siehe [LICENSE.md](LICENSE.md)
 * **Changelog**: Siehe [CHANGELOG.md](CHANGELOG.md)
