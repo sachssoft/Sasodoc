@@ -8,6 +8,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Projects\Sachssoft.Sasodoc\Sachssoft.Sasodoc.csproj" />
     <ProjectReference Include="..\..\Projects\Sachssoft.Sasodoc.Yaml\Sachssoft.Sasodoc.Yaml.csproj" />
-    <PackageReference Include="YamlDotNet" Version="16.3.0" />
+    <!--<PackageReference Include="YamlDotNet" Version="16.3.0" />-->
   </ItemGroup>
 </Project>
