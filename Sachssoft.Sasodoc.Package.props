@@ -1,0 +1,34 @@
+<Project>
+	<PropertyGroup>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+
+		<!-- NuGet Metadata -->
+		<VersionPrefix>2.0.0</VersionPrefix>
+
+		<Authors>Tobias Sachs</Authors>
+		<Copyright>© 2025-2026 Tobias Sachs (Sachssoft)</Copyright>
+
+		<PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+
+		<PackageProjectUrl>https://github.com/sachssoft/Sasodoc</PackageProjectUrl>
+
+		<GeneratePackageOnBuild Condition="'$(Configuration)' == 'Release'">
+			true
+		</GeneratePackageOnBuild>
+
+		<!-- Source Repository -->
+		<RepositoryUrl>https://github.com/sachssoft/Sasodoc.git</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="$(MSBuildThisFileDirectory)LICENSE.md"
+			  Pack="true"
+			  PackagePath="\" />
+
+		<None Include="$(MSBuildThisFileDirectory)README.md"
+			  Pack="true"
+			  PackagePath="\" />
+	</ItemGroup>
+</Project>

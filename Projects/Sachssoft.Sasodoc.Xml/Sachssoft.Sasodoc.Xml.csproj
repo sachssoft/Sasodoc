@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\Sachssoft.Sasodoc.Package.props" />
+
+	<PropertyGroup>
+		<TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
+
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+
+		<RootNamespace>Sachssoft.Documents.Formats.Xml</RootNamespace>
+		<AssemblyName>Sachssoft.Sasodoc.Xml</AssemblyName>
+
+		<PackageId>Sachssoft.Sasodoc.Xml</PackageId>
+		<Title>Sachssoft Sasodoc XML</Title>
+		<Description>XML document format support for Sachssoft Sasodoc.</Description>
+
+		<!-- Trimming / AOT -->
+		<IsTrimmable>true</IsTrimmable>
+		<IsAotCompatible>true</IsAotCompatible>
+		<EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+		<EnableAotAnalyzer>true</EnableAotAnalyzer>
+		<EnableSingleFileAnalyzer>true</EnableSingleFileAnalyzer>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Sachssoft.Sasodoc\Sachssoft.Sasodoc.csproj" />
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\Sachssoft.Sasodoc.Package.props" />
+
+	<PropertyGroup>
+		<TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
+
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+
+		<RootNamespace>Sachssoft.Documents</RootNamespace>
+		<AssemblyName>Sachssoft.Sasodoc</AssemblyName>
+
+		<!-- Code Quality -->
+		<AnalysisLevel>latest</AnalysisLevel>
+		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+
+		<!-- Trimming / AOT -->
+		<IsTrimmable>true</IsTrimmable>
+		<IsAotCompatible>true</IsAotCompatible>
+		<EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+		<EnableAotAnalyzer>true</EnableAotAnalyzer>
+		<EnableSingleFileAnalyzer>true</EnableSingleFileAnalyzer>
+
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+		<!-- NuGet Metadata -->
+		<PackageId>Sachssoft.Sasodoc</PackageId>
+		<Title>Sachssoft Sasodoc</Title>
+		<Product>Sachssoft.Sasodoc</Product>
+		<Description>Document library core of Sachssoft Sasodoc</Description>
+	</PropertyGroup>
+
+</Project>

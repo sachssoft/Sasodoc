@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\Sachssoft.Sasodoc.Package.props" />
+
+	<PropertyGroup>
+		<TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
+
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+
+		<RootNamespace>Sachssoft.Documents.Formats.Ini</RootNamespace>
+		<AssemblyName>Sachssoft.Sasodoc.Ini</AssemblyName>
+
+		<PackageId>Sachssoft.Sasodoc.Ini</PackageId>
+		<Title>Sachssoft Sasodoc INI</Title>
+		<Description>INI document format support for Sachssoft Sasodoc.</Description>
+
+		<!-- Trimming / AOT -->
+		<IsTrimmable>true</IsTrimmable>
+		<IsAotCompatible>true</IsAotCompatible>
+		<EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+		<EnableAotAnalyzer>true</EnableAotAnalyzer>
+		<EnableSingleFileAnalyzer>true</EnableSingleFileAnalyzer>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Sachssoft.Sasodoc\Sachssoft.Sasodoc.csproj" />
+	</ItemGroup>
+
+</Project>

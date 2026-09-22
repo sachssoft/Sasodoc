@@ -1,0 +1,35 @@
+
+<Solution>
+  <Folder Name="/Docs/">
+    <File Path="CHANGELOG.md" />
+    <File Path="LICENSE.md" />
+    <File Path="README.md" />
+    <File Path="README_de.md" />
+    <File Path="Sachssoft.Sasodoc.Package.props" />
+  </Folder>
+  <Folder Name="/Build/">
+  </Folder>
+<Folder Name="/Examples/">
+  <Project Path="Examples/01.Json.Basic/01.Json.Basic.csproj" />
+  <Project Path="Examples/02.Xml.Basic/02.Xml.Basic.csproj" />
+  <Project Path="Examples/03.Ini.Basic/03.Ini.Basic.csproj" />
+  <Project Path="Examples/04.Yaml.Basic/04.Yaml.Basic.csproj" />
+  <Project Path="Examples/05.Binary.Basic/05.Binary.Basic.csproj" />
+  <Project Path="Examples/06.Binary.Identifier.None/06.Binary.Identifier.None.csproj" />
+  <Project Path="Examples/07.Binary.Identifier.Inline/07.Binary.Identifier.Inline.csproj" />
+  <Project Path="Examples/08.Binary.Identifier.Registry/08.Binary.Identifier.Registry.csproj" />
+  <Project Path="Examples/09.Binary.Magics/09.Binary.Magics.csproj" />
+  <Project Path="Examples/10.Binary.LengthEncodings/10.Binary.LengthEncodings.csproj" />
+  <Project Path="Examples/11.Binary.Async/11.Binary.Async.csproj" />
+  <Project Path="Examples/12.Binary.Arrays/12.Binary.Arrays.csproj" />
+  <Project Path="Examples/13.Json.NamingConventions/13.Json.NamingConventions.csproj" />
+</Folder>
+  <Folder Name="/Projects/">
+    <Project Path="Projects/Sachssoft.Sasodoc.Binary/Sachssoft.Sasodoc.Binary.csproj" />
+    <Project Path="Projects/Sachssoft.Sasodoc.Ini/Sachssoft.Sasodoc.Ini.csproj" />
+    <Project Path="Projects/Sachssoft.Sasodoc.Json/Sachssoft.Sasodoc.Json.csproj" />
+    <Project Path="Projects/Sachssoft.Sasodoc.Xml/Sachssoft.Sasodoc.Xml.csproj" />
+    <Project Path="Projects/Sachssoft.Sasodoc.Yaml/Sachssoft.Sasodoc.Yaml.csproj" />
+    <Project Path="Projects/Sachssoft.Sasodoc/Sachssoft.Sasodoc.csproj" />
+  </Folder>
+</Solution>
